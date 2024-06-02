@@ -62,10 +62,12 @@ fn main() {
                         // let stream_poll = stream.try_into_poll_io().unwrap();
                         let (reader, writer) =
                             tokio_util::compat::TokioAsyncReadCompatExt::compat(stream).split();
+                        let buf_reader = futures::io::BufReader::new(reader);
+                        let buf_writer = futures::io::BufWriter::new(writer);
 
                         let network = capnp_rpc::twoparty::VatNetwork::new(
-                            reader,
-                            writer,
+                            buf_reader,
+                            buf_writer,
                             capnp_rpc::rpc_twoparty_capnp::Side::Server,
                             Default::default(),
                         );
