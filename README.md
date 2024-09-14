@@ -22,7 +22,7 @@ A toy Cap'n Proto QPS benchmark tool.
 2. Start the server
 
    ```sh
-   ./target/release/server 127.0.0.1:11451
+   ./target/release/server 127.0.0.1:9100
    INFO: Listening on 127.0.0.1:9100
    INFO: Bound to core 0
    ```
@@ -43,25 +43,28 @@ A toy Cap'n Proto QPS benchmark tool.
 ```sh
 $ uname -a
 Linux fedora 6.2.9-300.fc38.x86_64 #1 SMP PREEMPT_DYNAMIC Thu Mar 30 22:32:58 UTC 2023 x86_64 GNU/Linux
+
+$ lscpu | grep 'Model name'
+Model name:                      AMD Ryzen 5 6600H with Radeon Graphics
 ```
 
 | # of connections | QPS |
 |------------------|-----|
-| 1                |24958|
-| 2                |45197|
-| 3                |43875|
-| 4                |47533|
-| 5                |48359|
-| 6                |50201|
-| 7                |50005|
-| 8                |51000|
-| 9                |51746|
-| 10               |51256|
-| 20               |52780|
-| 30               |52485|
-| 40               |52347|
-| 50               |52598|
-| 60               |51354|
-| 70               |52748|
+| 1                |32131|
+| 2                |61845|
+| 3                |60042|
+| 4                |66894|
+| 5                |69049|
+| 6                |69373|
+| 7                |69171|
+| 8                |69937|
+| 9                |71216|
+| 10               |71390|
+| 20               |70982|
+| 30               |72430|
+| 40               |72432|
+| 50               |72121|
+| 60               |73098|
+| 70               |70728|
 
 
